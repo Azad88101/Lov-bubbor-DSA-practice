@@ -3,7 +3,8 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/4 CPP_TO_BUILD_SOFTWARE/calculator/include"
             ],
             "defines": [
                 "_DEBUG",

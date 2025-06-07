@@ -61,6 +61,7 @@ int main(int argc, char const *argv[])
     set<string> cateogories;
     for (const auto &produt : products)
     {
+    
         cout << produt.category << "  ";
         cout << "  \n";
         cateogories.insert(produt.category);

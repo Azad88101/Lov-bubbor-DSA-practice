@@ -1,0 +1,3 @@
+D:/Lov bubbor DSA practice/4 CPP_TO_BUILD_SOFTWARE/MainCalculator/build/CMakeFiles/calc.dir
+D:/Lov bubbor DSA practice/4 CPP_TO_BUILD_SOFTWARE/MainCalculator/build/CMakeFiles/edit_cache.dir
+D:/Lov bubbor DSA practice/4 CPP_TO_BUILD_SOFTWARE/MainCalculator/build/CMakeFiles/rebuild_cache.dir
