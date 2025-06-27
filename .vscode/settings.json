@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.dbclient-js": "javascript",
+        "vector": "cpp",
+        "unordered_map": "cpp",
+        "iostream": "cpp"
+    },
+    "cmake.ignoreCMakeListsMissing": true,
+    "C_Cpp.errorSquiggles": "enabled"
+}
