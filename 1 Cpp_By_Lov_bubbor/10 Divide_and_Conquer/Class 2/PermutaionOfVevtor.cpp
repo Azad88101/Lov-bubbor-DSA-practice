@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-vector<vector<int>> findPermutation(vector<int> arr, int i, vector<vector<int>> ans)
+void findPermutation(vector<int> &arr, int i, vector<vector<int>> &ans)
 {
     if (i >= arr.size())
     {
@@ -24,5 +24,15 @@ int main(int argc, char const *argv[])
     int i = 0;
     findPermutation(arr, i, ans);
 
+    for (auto v : ans)
+    {
+        for (auto val : v)
+        {
+            cout << val << " ";
+        }
+        cout << "\n";
+    }
+
     return 0;
 }
+
