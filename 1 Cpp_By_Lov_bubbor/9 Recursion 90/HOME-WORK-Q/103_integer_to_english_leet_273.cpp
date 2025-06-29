@@ -145,7 +145,7 @@ string intToEng(int n)
 int main(int argc, char const *argv[])
 {
 
-    cout << intToEng(214748364);
+    cout << intToEng(4);
 
     return 0;
 }
