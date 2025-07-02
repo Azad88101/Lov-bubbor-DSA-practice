@@ -158,6 +158,10 @@ void findsum2(vector<int> &arr, int sum, int t, vector<int> &temp, vector<vector
 
     for (int i = idx; i < arr.size(); i++)
     {
+        if (i > idx && arr[i] == arr[i - 1])
+        {
+            continue;
+        }
         // cout << "Choosing: " << arr[i] << endl;
         temp.push_back(arr[i]);
         // sum += arr[i];
@@ -177,24 +181,28 @@ int main(int argc, char const *argv[])
 
     findsum2(arr, 0, t, temp, ans, 0);
     // cout << "Total combinations found: " << ans.size() << endl;
-    set<vector<int>> st;
-    for (auto e : ans)
-    {
-        // sort(e.begin(), e.end());
-        // MergeSort(e, 0, e.size() - 1);
+    // set<vector<int>> st;
+    // for (auto e : ans)
+    // {
+    //     // sort(e.begin(), e.end());
+    //     // MergeSort(e, 0, e.size() - 1);
 
-        // choosing 1st elem pivot
-        // QwickSort(e, 0, e.size() - 1);
+    //     // choosing 1st elem pivot
+    //     // QwickSort(e, 0, e.size() - 1);
 
-        /// last
-        // QuickSort(e,0,e.size()-1);
-        st.insert(e);
-    }
-    ans.clear();
-    for (auto e : st)
-    {
-        ans.push_back(e);
-    }
+    //     /// last
+    //     // QuickSort(e,0,e.size()-1);
+    //     st.insert(e);
+    // }
+    // ans.clear();
+    // for (auto e : st)
+    // {
+    //     ans.push_back(e);
+    // }
+
+    // set gives TLE
+
+    
     for (auto v : ans)
     {
         for (auto m : v)
