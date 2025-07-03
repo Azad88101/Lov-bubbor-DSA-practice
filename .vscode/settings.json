@@ -5,7 +5,8 @@
         "unordered_map": "cpp",
         "iostream": "cpp",
         "xstring": "cpp",
-        "numeric": "cpp"
+        "numeric": "cpp",
+        "unordered_set": "cpp"
     },
     "cmake.ignoreCMakeListsMissing": true,
     "C_Cpp.errorSquiggles": "enabled"
