@@ -10,7 +10,7 @@ void findPer(string &s, int i)
         cout << s << " ";
         return;
     }
-   
+
     for (int j = i; j < s.size(); j++)
     {
         swap(s[i], s[j]);
