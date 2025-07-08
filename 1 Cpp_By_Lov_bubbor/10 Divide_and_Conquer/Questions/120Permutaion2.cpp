@@ -20,7 +20,7 @@ void normalPerm(vector<int> &s, int j, set<vector<int>> &ans)
 }
 int main(int argc, char const *argv[])
 {
-    vector<int> arr = {1, 1, 2};
+    vector<int> arr = {1, 2, 3};
     // vector<vector<int>> ans;
     set<vector<int>> ans;
     normalPerm(arr, 0, ans);
