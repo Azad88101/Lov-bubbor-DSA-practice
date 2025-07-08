@@ -2,69 +2,46 @@
 #include <vector>
 using namespace std;
 
-bool isSafe(int row, int col, vector<vector<char>> arr)
+bool isSafe(int row, int col, const vector<string> &arr)
 {
-
     int i = row, j = col;
-    // row check kro
+
+    // Check row (left side)
     while (j >= 0)
     {
         if (arr[i][j] == 'Q')
-        {
             return false;
-        }
         j--;
     }
 
+    // Check upper-left diagonal
     i = row, j = col;
-
-    while (j >= 0 && i >= 0)
+    while (i >= 0 && j >= 0)
     {
         if (arr[i][j] == 'Q')
-        {
             return false;
-        }
-        j--;
         i--;
+        j--;
     }
-    i = row, j = col;
 
-    while (j >= 0 && i < arr.size())
+    // Check lower-left diagonal
+    i = row, j = col;
+    while (i < arr.size() && j >= 0)
     {
         if (arr[i][j] == 'Q')
-        {
             return false;
-        }
-        j--;
         i++;
+        j--;
     }
 
     return true;
 }
-void printSol(int n, vector<vector<char>> &arr)
+
+void findQueen(int col, int n, vector<string> &arr, vector<vector<string>> &ans)
 {
-
-    for (int i = 0; i < n; i++)
+    if (col == n)
     {
-        for (int j = 0; j < n; j++)
-        {
-            cout << arr[i][j] << " ";
-        }
-
-        cout << '\n';
-    }
-    cout << '\n';
-    cout << '\n';
-
-    return;
-}
-
-void findQueen(int col, int n, vector<vector<char>> &arr)
-{
-
-    if (col >= n)
-    {
-        printSol(n, arr);
+        ans.push_back(arr);
         return;
     }
 
@@ -73,29 +50,30 @@ void findQueen(int col, int n, vector<vector<char>> &arr)
         if (isSafe(row, col, arr))
         {
             arr[row][col] = 'Q';
-            findQueen(col + 1, n, arr);
-            arr[row][col] = '-';
+            findQueen(col + 1, n, arr, ans);
+            arr[row][col] = '_';
         }
     }
 }
 
-int main(int argc, char const *argv[])
+int main()
 {
-    int n = 18;
+    int n = 4;
 
-    vector<vector<char>> arr(n, vector<char>(n, '-'));
+    vector<string> arr(n, string(n, '_'));
+    vector<vector<string>> ans;
 
-    findQueen(0, n, arr);
+    findQueen(0, n, arr, ans);
 
-    // for (int i = 0; i < n; i++)
-    // {
-    //     for (int j = 0; j < n; j++)
-    //     {
-    //         cout << arr[i][j] << " ";
-    //     }
-
-    //     cout << endl;
-    // }
+    // Print solutions
+    for (const auto &sol : ans)
+    {
+        for (const string &row : sol)
+        {
+            cout << row << endl;
+        }
+        cout << endl;
+    }
 
     return 0;
 }
