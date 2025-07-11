@@ -596,7 +596,7 @@ int main()
     reverseLLRec(head, prev, head);
     print(head);
 
-       reverseLLRec(head, prev, head);
+    reverseLLRec(head, prev, head);
     print(head);
     return 0;
 }
