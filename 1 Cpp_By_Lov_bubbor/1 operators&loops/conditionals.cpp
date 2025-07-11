@@ -15,7 +15,6 @@ int main()
     else
     {
         cout << "bat ban nhi banegi\n";
-
     }
     // cout << "lunch nhi";
     // printf("hello");
