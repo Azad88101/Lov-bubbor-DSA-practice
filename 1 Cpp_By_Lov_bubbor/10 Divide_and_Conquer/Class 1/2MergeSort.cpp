@@ -15,8 +15,6 @@ void Merging(vector<int> &arr, int s, int e)
         left.push_back(arr[i]);
     }
 
-   
-
     vector<int> right;
 
     for (int i = mid + 1; i <= e; i++)
@@ -72,13 +70,13 @@ void MergeSort(vector<int> &arr, int s, int e)
 
 int main(int argc, char const *argv[])
 {
-    vector<int> arr = {8, 1, 7, 2, 9, 4, 1, 8, 4, 9, 0,9};
+    vector<int> arr = {8, 1, 7, 2, 9, 4, 1, 8, 4, 9, 0, 9};
 
+    MergeSort(arr, 0, arr.size() - 1);
 
-    MergeSort(arr,0,arr.size()-1);
-
-    for(auto v:arr){
-        cout<<v<<" ";
+    for (auto v : arr)
+    {
+        cout << v << " ";
     }
 
     return 0;
