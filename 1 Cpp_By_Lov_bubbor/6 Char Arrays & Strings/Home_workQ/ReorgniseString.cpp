@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <climits>
+#include <vector>
 using namespace std;
 // metjod 1 i mak thiss  using two pointer approach 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
 string reorgnise1(string s)
@@ -43,7 +44,7 @@ string reorgnise1(string s)
     return s;
 }
 
-// method 2 by bubbor 22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222
+// method 2 by bubbor 222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222
 string reorgnise2(string s)
 {
 
@@ -93,12 +94,68 @@ string reorgnise2(string s)
 
     return s;
 }
+// 33333333333333333333333333333333333333333333333333333333333333333333333333333333333
+string reorganizeString(string s)
+{
+    vector<int> freq(26, 0);
+    int n = s.length();
 
+    // Count frequencies
+    for (char ch : s)
+    {
+        freq[ch - 'a']++;
+    }
+
+    // Find the most frequent character
+    int maxFreq = 0;
+    char maxChar;
+    for (int i = 0; i < 26; i++)
+    {
+        if (freq[i] > maxFreq)
+        {
+            maxFreq = freq[i];
+            maxChar = 'a' + i;
+        }
+    }
+
+    // If the most frequent character is more than (n+1)/2, not possible
+    if (maxFreq > (n + 1) / 2)
+    {
+        return "";
+    }
+
+    // Result string
+    string res(n, ' ');
+
+    int idx = 0;
+    // Place the most frequent character at even indices
+    while (freq[maxChar - 'a'] > 0)
+    {
+        res[idx] = maxChar;
+        idx += 2;
+        freq[maxChar - 'a']--;
+    }
+
+    // Place the remaining characters
+    for (int i = 0; i < 26; i++)
+    {
+        while (freq[i] > 0)
+        {
+            if (idx >= n)
+                idx = 1; // Move to odd indices
+            res[idx] = 'a' + i;
+            idx += 2;
+            freq[i]--;
+        }
+    }
+
+    return res;
+}
 int main(int argc, char const *argv[])
 {
     string s = "baaba";
 
-    string ans = reorgnise2(s);
+    string ans = reorganizeString(s);
     cout << ans;
     return 0;
 }
