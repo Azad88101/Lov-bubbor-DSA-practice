@@ -25,13 +25,14 @@ void insert_value_in_sorted_stack(stack<int> &s, int t)
 void Sort(stack<int> &s)
 {
 
-    if (s.empty())return;
+    if (s.empty())
+        return;
 
     int t = s.top();
     s.pop();
     Sort(s);
     insert_value_in_sorted_stack(s, t);
-} 
+}
 
 int main(int argc, char const *argv[])
 {
