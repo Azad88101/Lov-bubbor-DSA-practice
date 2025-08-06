@@ -20,11 +20,12 @@ void push_top_into_bottom(stack<int> &st)
 {
     if (st.empty())
     {
-        cout << "cant insert at botom";
+        cout << "cant insert at botom  ";
         return;
     }
     int t = st.top();
     st.pop();
+    push_top_into_bottom(st);
     solve(st, t);
 }
 
