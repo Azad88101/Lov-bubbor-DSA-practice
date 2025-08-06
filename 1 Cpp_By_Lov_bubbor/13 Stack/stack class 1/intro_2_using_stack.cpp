@@ -100,11 +100,5 @@ int main(int argc, char const *argv[])
     cout << s.getSize() << '\n';
     s.pop();
 
-
-
-
-
-
-    
     return 0;
 }
