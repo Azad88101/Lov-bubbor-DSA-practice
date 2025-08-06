@@ -47,6 +47,14 @@ int findGCDByRecursion(int a, int b)
     }
 }
 
+int findGCDByRecursion2(int a, int b)
+{
+    if (b == 0)
+        return a;
+
+    return findGCDByRecursion2(b, a % b);
+}
+
 int findLcm(int a, int b)
 {
     int lcm = (a * b) / findGCDByRecursion(a, b);
@@ -56,13 +64,15 @@ int main(int argc, char const *argv[])
 {
     int a = 24;
     int b = 74;
-    cout << findGCD(a, b)<< endl;
+    cout << findGCD(a, b) << endl;
 
     cout << findLcm(a, b) << endl;
 
     // cout << ans << endl;
     // cout << ans2;
 
-    cout << findGCDByRecursion(a, b);
+    cout << findGCDByRecursion(a, b) << endl;
+    cout << findGCDByRecursion2(a, b);
     return 0;
 }
+
