@@ -44,13 +44,17 @@ public:
 
             return;
         }
-        cout << "[DEBUG] Removed element " << arr[front] << " from position " << front << "\n";
-        front++;
-        cout << "[DEBUG] Front moved to " << front << ", Rear: " << rear << "\n";
-        if (rear == front)
+        else
         {
-            front = 0;
-            rear = 0;
+            cout << "[DEBUG] Removed element " << arr[front] << " from position " << front << "\n";
+
+            front++;
+            cout << "[DEBUG] Front moved to " << front << ", Rear: " << rear << "\n";
+            if (rear == front)
+            {
+                front = 0;
+                rear = 0;
+            }
         }
     }
 
