@@ -38,12 +38,20 @@ public:
         cout << "[DEBUG] Trying to pop...\n";
         if (rear == front)
         {
+            // front = 0;
+            // rear = 0;
             cout << "[DEBUG] Queue is EMPTY. Cannot pop.\n";
+
             return;
         }
         cout << "[DEBUG] Removed element " << arr[front] << " from position " << front << "\n";
         front++;
         cout << "[DEBUG] Front moved to " << front << ", Rear: " << rear << "\n";
+        if (rear == front)
+        {
+            front = 0;
+            rear = 0;
+        }
     }
 
     int getfront()
@@ -57,6 +65,16 @@ public:
         cout << "[DEBUG] Front element is " << arr[front] << "\n";
         return arr[front];
     }
+
+    int getSize()
+    {
+        return rear - front;
+    }
+
+    bool isEmpty()
+    {
+        return front == rear;
+    }
 };
 
 int main()
@@ -67,11 +85,30 @@ int main()
     q.push(1);
     q.push(2);
     q.push(3);
+    cout << "total size " << q.getSize() << endl;
+
     q.push(4);
+
+    cout << q.isEmpty() << endl;
 
     q.getfront();
     q.pop();
     q.getfront();
+
+    q.pop();
+    cout << "total size " << q.getSize() << endl;
+
+    q.pop();
+
+    q.push(10);
+    q.push(50);
+    q.push(70);
+    q.pop();
+    q.pop();
+    q.pop();
+    q.pop();
+    q.pop();
+    cout << q.isEmpty() << endl;
 
     return 0;
 }
