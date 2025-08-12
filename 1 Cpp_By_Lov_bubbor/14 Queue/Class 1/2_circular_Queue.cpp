@@ -81,5 +81,20 @@ int main()
     cout << q.getfront() << "\n"; // 20
     q.pop();
     cout << q.getfront() << "\n"; // 20
+
+    q.push(60);
+    q.push(70);
+    q.push(80);
+
+    cout << q.getfront() << "\n"; // 10
+    q.pop();
+    cout << q.getfront() << "\n"; // 20
+
+    q.pop();
+    cout << q.getfront() << "\n"; // 20
+
+
+
+    cout<<1%4;
     return 0;
 }
