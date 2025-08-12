@@ -93,8 +93,6 @@ int main()
     q.pop();
     cout << q.getfront() << "\n"; // 20
 
-
-
-    cout<<1%4;
+    cout << 1 % 4;
     return 0;
 }
