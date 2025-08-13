@@ -1,6 +1,11 @@
 {
     "files.associations": {
         "*.dbclient-js": "javascript",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "xstring": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "vector": "cpp",
+        "xutility": "cpp"
     }
 }
