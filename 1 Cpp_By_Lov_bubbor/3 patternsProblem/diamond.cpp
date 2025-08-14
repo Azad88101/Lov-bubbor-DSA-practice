@@ -1,10 +1,11 @@
 #include <iostream>
 using namespace std;
-int main(){
-    int n;
-    cin>>n;
-    
-     for (int i = 0; i < n; i++)
+int main()
+{
+    int n = 5;
+    // cin>>n;
+
+    for (int i = 0; i < n; i++)
     {
         for (int space = 0; space < n - i - 1; space++)
         {
@@ -12,11 +13,11 @@ int main(){
         }
         for (int star = 0; star < i + 1; star++)
         {
-            cout << " * ";
+            cout << "* ";
         }
         cout << "\n";
     }
-     for (int i = 0; i < n; i++)
+    for (int i = 1; i < n; i++)
     {
         for (int j = 0; j < i; j++)
         {
@@ -24,9 +25,8 @@ int main(){
         }
         for (int k = 0; k < n - i; k++)
         {
-            cout << " * ";
+            cout << "* ";
         }
         cout << "\n";
     }
-
 }
