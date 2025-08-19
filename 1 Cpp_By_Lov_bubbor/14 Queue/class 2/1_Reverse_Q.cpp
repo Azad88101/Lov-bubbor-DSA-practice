@@ -40,6 +40,20 @@ void rev_rec(queue<int> &q)
     rev_rec(q);
     q.push(v);
 }
+
+// Approach2
+queue<int> rev_rec_witout_ref_var(queue<int> q)
+{
+    if (q.empty())
+        return queue<int>();
+
+    int v = q.front();
+    q.pop();
+    queue<int> Q = rev_rec_witout_ref_var(q);
+    Q.push(v);
+    return Q;
+}
+
 int main(int argc, char const *argv[])
 {
     queue<int> q;
@@ -50,12 +64,21 @@ int main(int argc, char const *argv[])
     q.push(9);
     q.push(2);
     q.push(8);
+    queue<int> Q = rev_rec_witout_ref_var(q);
 
     rev_rec(q);
+
     while (!q.empty())
     {
         cout << q.front() << " ";
         q.pop();
+    }
+
+    cout << endl;
+    while (!Q.empty())
+    {
+        cout << Q.front() << " ";
+        Q.pop();
     }
 
     return 0;

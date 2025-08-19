@@ -6,6 +6,7 @@
         "deque": "cpp",
         "list": "cpp",
         "vector": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "queue": "cpp"
     }
 }
