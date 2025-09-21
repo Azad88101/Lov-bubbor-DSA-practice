@@ -73,14 +73,24 @@ void deletion(node *&head, int pos)
     delete curr;
 }
 
+void reverse(node *&head)
+{
+    node *prev = NULL;
+    node *curr = head;
+    while (curr)
+    {
+        node *next = curr->next;
+        curr->next = prev;
+
+        prev = curr;
+        curr = next;
+    }
+    head = prev;
+}
 int main(int argc, char const *argv[])
 {
     node *head = NULL;
     insert(head, 2);
-    insert(head, 1);
-
-    insert(head, 5);
-    insert(head, 8);
     insert(head, 1);
 
     insert(head, 5);
@@ -96,5 +106,7 @@ int main(int argc, char const *argv[])
 
     printLL(head);
 
+    reverse(head);
+    printLL(head);
     return 0;
 }
